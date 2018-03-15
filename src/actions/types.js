@@ -1,0 +1,3 @@
+const CHANGE_AUTH = 'CHANGE_AUTH'
+
+export { CHANGE_AUTH }
