@@ -1,3 +1,4 @@
 const CHANGE_AUTH = 'CHANGE_AUTH'
+const FETCH_USERS = 'FETCH_USERS'
 
-export { CHANGE_AUTH }
+export { CHANGE_AUTH, FETCH_USERS }

@@ -8,7 +8,9 @@ import requireAuth from './components/require_auth'
 
 import App from './components/app';
 import Resources from './components/Resources'
+import UserList from './components/user_list'
 import reducers from './reducers';
+import Async from './middlewares/async'
 
 // @see: https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup
 
@@ -24,7 +26,7 @@ const enhancer = composeEnhancers(
   // other store enhancers if any
 );
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(Async)(createStore);
 
 //const ComposedComponent = requireAuth(Resources)
 
@@ -34,6 +36,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <Route path="resources" component={requireAuth(Resources)} />
       </Route>
+      <Route path="/users" component={UserList} />
     </Router>
   </Provider>
   , document.querySelector('.container'));
